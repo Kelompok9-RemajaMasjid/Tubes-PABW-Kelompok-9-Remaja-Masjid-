@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <title>Estimasi Biaya</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+
+      <style type="text/css">
+      html, body {
+      min-height: 100%;
+      }
+      body, div, form, input, select, p { 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Poppins, sans-serif;
+      font-size: 20px;
+      color: #eee;
+      }
+      body {
+      background: url("images/danau sentani.jpg") no-repeat center;
+      background-size: cover;
+      }
+      .box {
+      color: black;
+      background: white;
+      padding: 15px;
+      border-radius: 5px;
+      margin: 20px;
+      width:30%;
+      }
+      .main-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      padding: 25px;
+      background: rgba(0, 0, 0, 0.5); 
+      }
+      form {
+      padding: 25px;
+      overflow: hidden;
+      }
+      form {
+      background: rgba(0, 0, 0, 0.5); 
+      border-radius: 10px;
+      }
+      .title {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      }
+      .info {
+      display: flex;
+      flex-direction: column;
+      }
+      input{
+      color: black;
+      padding: 5px;
+      margin-bottom: 30px;
+      /*background: transparent;*/
+      border: none;
+      border-bottom: 1px solid #eee;
+      float: left;
+      width: 15%;
+      }
+      label {
+      float: left;
+      width: 200px;
+      padding-right: 24px;
+      }
+      input::placeholder {
+      color: #eee;
+      }
+      select {
+        padding: 5px;
+      margin-bottom: 30px;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #eee;
+      float: left;
+      width: 40%;
+      }
+      .s-option {
+        color: black;
+      }
+      .i-date {
+        color: black;
+        background-color: white;
+        width: 40%;
+      }
+      .total{
+        font-weight: 900;
+      }
+      .back{
+        font-size: 16px;
+        margin-top: 75px;
+        float: left;
+        color: white;
+        background-color: #0098de; 
+      font-weight: 700;
+      width: 20%; 
+      border: 2px solid #244557;
+      border-radius: 10px;
+      }
+      .back:hover {
+        background-color: #6B8E23;
+      }
+      /*.tombol{
+        color: white;
+        background-color: #0098de; 
+        padding-left: 10px; 
+        padding-right: 10px; 
+        padding-top: 10px;
+        padding-bottom: 10px; 
+        border-radius: 10px;
+        width: 100%;
+      }*/
+      @media (min-width: 568px) {
+      html, body {
+      height: 100%;
+      }
+      .main-block {
+      flex-direction: row;
+      height: calc(100% - 50px);
+      }
+      }
+      </style>
+</head>
+<body>
+      <div class="main-block">
+      <form>
+            <center>
+            <h2>Estimasi Biaya Penginapan</h2></center><br>
+            <label>Objek Wisata</label><span>
+            <select id="wisata">
+                  <option class="s-option" value="150000">Raja Ampat</option>
+                  <option class="s-option" value="25000">Danau Sentani</option>
+                  <option class="s-option" value="200000">Puncak Jayawijaya</option>
+                  <option class="s-option" value="80000">Teluk Cenderawasih</option>
+                  <option class="s-option" value="60000">Kuala Kencana</option>
+                  <option class="s-option" value="75000">Lembah Baliem</option>
+            </select></span><br>
+            
+            <label for="">Hotel type</label> <select name="Hotel" id="hotel"><option value="">select</option>
+           <option class="s-option" value="100000"> 3 Star</option>
+           <option class="s-option" value="175000"> 4 Star</option>
+           <option class="s-option" value="250000"> 5 Star</option>
+           </select><br><br>
+            <label for="">Tanggal Mulai</label> <input type="date" id="startDate" class="i-date"> <br><br>
+            <label for="">Tanggal Selesai</label> <input type="date" id="endDate" class="i-date"><br><center><br>
+            <div class="total">
+            <div id="output"></div> <br><span>Estimasi Biaya : </span><br> <span id="price"></span></div></center>
+            <br><span>
+            <input class="back" type="button" value="<< Back" onclick="history.back(-1)" />
+            <!-- <label>Penginapan</label><span>
+            <select>
+                  <option class="s-option" id="hotel" onchange="hitung()">Hotel</option>
+                  <option class="s-option" id="wisma" onchange="hitung()">Wisma</option>
+            </select></span><br>
+            <label>Jumlah Orang</label><span>
+            <input id="orang" type="number" min="1" max="1000" onchange="hitung()" name="orang" value="1"></span><br>
+            <label>Jumlah Hari</label><span>
+            <input id="hari" type="number" min="1" max="1000" onchange="hitung()" name="hari" value="1"></span><br>
+            
+            <div id="output">
+                <div class="jumbotron">
+                    <h5>Harga penginapan rata-rata</h5>
+                    <div class="finalOutput" id="totalOutput"></div>
+                </div>
+            </div> <br>
+            <label>transportasi</label><span>
+            <select>
+                  <option>transportasi umum</option>
+                  <option>sewa transportasi</option>
+            </select></span><br>
+            <div id="output">
+                <div class="jumbotron">
+                    <h5>harga transportasi rata-rata</h5>
+                    <div class="finalOutput" id="totalOutput"></div>
+                </div>
+            </div>
+            <br><br>
+            <div>
+            <input id="submit" class="tombol" type="submit" name="submit" value="HITUNG"/>
+            </div>
+            <h3 id="total" onclick="hitung">Total : </h3> -->
+      </form>
+      </div>
+</body>
+<script type="text/javascript">
+  document.getElementById('endDate').addEventListener('change', calc);
+document.getElementById('startDate').addEventListener('change', fun);
+document.getElementById('hotel').addEventListener('change', fun);
+document.getElementById('wisata').addEventListener('change', fun);
+
+function fun(){
+    if(document.getElementById('startDate').value == "" || document.getElementById('endDate').value == ""){
+        return false;
+    }else{calc()}
+}
+
+function calc() {
+    const output = document.getElementById('output')
+    const price = document.getElementById('price');
+    let hotel = document.getElementById('hotel').value;
+    hotel = Number(hotel);
+    let wisata = document.getElementById('wisata').value;
+    wisata = Number(wisata);
+    let startDate = document.getElementById('startDate').value;
+    let endDate = document.getElementById('endDate').value;
+    console.log(startDate);
+    let startDate1 = new Date(startDate);
+    let endDate2 = new Date(endDate);
+    let time = Math.abs(endDate2.getTime() - startDate1.getTime());
+    let days = Math.ceil(time / (1000 * 3600 * 24));
+    //output.innerHTML = 'Perkiraan Biaya Akomodasi :  ' + days * wisata;
+    price.innerHTML = hotel * days + days * wisata;
+    
+}
+
+
+</script>
+</html>

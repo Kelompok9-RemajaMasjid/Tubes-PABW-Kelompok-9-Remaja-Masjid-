@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   
+    <title>Registrasi</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <style>
+      html, body {
+      min-height: 100%;
+      }
+      body, div, form, input, select, p { 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Poppins, sans-serif;
+      font-size: 16px;
+      color: #eee;
+      }
+      body {
+      background: url("images/5OrtiJa1GH.jpg") no-repeat center;
+      background-size: cover;
+      }
+      h2 {
+      text-transform: uppercase;
+      font-weight: 400;
+      margin: 0 0 0 8px;
+      }
+      .box {
+      padding: 15px;
+      border-radius: 5px;
+      margin: 20px;
+      width: 30%;
+      }
+      .main-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      padding: 25px;
+      background: rgba(0, 0, 0, 0.5); 
+      }
+      .left-part, form {
+      padding: 25px;
+      }
+      .left-part {
+      text-align: center;
+      }
+      .logo {
+      size: 72px;
+      }
+      form {
+      width: 90%;
+      background: rgba(0, 0, 0, 0.7); 
+      border-radius: 10px;
+      }      
+      .title {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      }
+      .info {
+      display: flex;
+      flex-direction: column;
+      }
+      input, select {
+      padding: 5px;
+      margin-bottom: 30px;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #eee;
+      }
+      input::placeholder {
+      color: #eee;
+      }
+      option:focus {
+      border: none;
+      }
+      option {
+      background: black; 
+      border: none;
+      }
+      .checkbox input {
+      margin: 0 10px 0 0;
+      vertical-align: middle;
+      }
+      .checkbox a {
+      color: #26a9e0;
+      }
+      .checkbox a:hover {
+      color: #85d6de;
+      }
+      .tombol{
+        background-color: #0098de; 
+        padding-left: 10px; 
+        padding-right: 10px; 
+        padding-top: 10px;
+        padding-bottom: 10px; 
+        border-radius: 10px;
+        width: 100%;
+      }
+      .tombol:hover {
+        background-color: #6B8E23;
+      }
+      .custom_select, .radio{
+        display: inline-block;
+      }
+      @media (min-width: 568px) {
+      html, body {
+      height: 100%;
+      }
+      .main-block {
+      flex-direction: row;
+      height: calc(100% - 50px);
+      }
+      .left-part, form {
+      flex: 1;
+      height: auto;
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-block">
+      <div class="left-part">
+        <image src="images/logo pabw.png" class="logo"></i>
+        <h1>Daftar Explore Papua</h1>
+      </div>
+      <div class="box">
+      <form class="form" action="form_registrasi.php"name="form_login" method="POST" >
+        <div class="title">
+          <h2>Daftar disini</h2>
+        </div>
+        <div class="info">
+          <input id="username" class="username" type="text" name="username" autocomplete="on" required placeholder="username">
+          <input type="email" name="email" id="email" class="email" autocomplete="on" required placeholder="email">
+          <input type="password" name="password" id="password" utocomplete="on" required placeholder="password">
+          <input type="password" name="conpassword" id="confirm_password" utocomplete="on" required placeholder="konfirmasi password">
+        </div>
+        <!-- <label class="radio">Jenis Kelamin </label>
+        <div class="radio">
+          <input type="radio" name="jenisKelamin" id="pria"><label for="pria">pria</label>
+          <input type="radio" name="jenisKelamin" id="wanita"><label for="wanita">wanita</label>
+        </div> -->
+        <!-- <div class="inputfield">
+            <label class="custom_select">Asal</label>
+            <div class="custom_select">
+              <select id="jeniskelamin-input">
+                <option value="Indonesia">Indonesia</option>
+                <option value="Luar Negeri">Luar Negeri</option>
+              </select>
+            </div>
+        </div> -->
+        <!--<div class="checkbox">
+          <input type="checkbox" name="checkbox" id="checkbox"><span>Saya bukan robot</span>
+        </div><br>-->
+        <input id="submit" class="tombol" type="submit" name="kumpul" value="Daftar"/>
+      </form></div>
+    </div>
+  </body>
+  <!--<script type="text/javascript">
+    function validasi() {
+    var username = document.getElementById("username").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    var konfirmasipassword = document.getElementById("confirm_password").value;
+    var jeniskelamin = document.getElementById("jeniskelamin").value;
+    var asal = document.getElementById("Asal").value;
+    const cb = document.getElementById("checkbox");
+    function confirm(){
+      if (password == confirm_password) {
+        return password;
+      } alert("password tidak sesuai")
+    }
+    if (username!= "" && password!="" && konfirmasipassword!="" jeniskelamin==null && asal!= "" && email!= "") {
+      if (cb == null) {alert(anda robot);return cb}
+      window.location.href="login.html";
+      return true;
+    }
+
+  }
+  </script>-->
+</html>
