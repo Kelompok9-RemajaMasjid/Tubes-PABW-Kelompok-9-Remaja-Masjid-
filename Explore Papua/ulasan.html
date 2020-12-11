@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+
+      <style type="text/css">
+      html, body {
+      min-height: 100%;
+      }
+      body, div, form, input, select, p { 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Poppins, sans-serif;
+      font-size: 20px;
+      color: #eee;
+      }
+      body {
+      background: url("images/teluk1.jpg") no-repeat center;
+      background-size: cover;
+      }
+      .main-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      padding: 25px;
+      background: rgba(0, 0, 0, 0.5); 
+      }
+      form {
+      padding: 25px;
+      overflow: hidden;
+      }
+      form {
+      background: rgba(0, 0, 0, 0.5); 
+      border-radius: 10px;
+      }
+      .title {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      }
+      .info {
+      display: flex;
+      flex-direction: column;
+      }
+      input{
+      color: black;
+      padding: 5px;
+      margin-bottom: 30px;
+      /*background: transparent;*/
+      border: none;
+      border-bottom: 1px solid #eee;
+      float: left;
+      width: 15%;
+      }
+      label {
+      float: left;
+      width: 200px;
+      padding-right: 24px;
+      }
+      input::placeholder {
+      color: #b8baba;
+      font-size: 14px;
+      }
+      select {
+        padding: 5px;
+      margin-bottom: 30px;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #eee;
+      float: left;
+      width: 40%;
+      }
+      .s-option {
+        color: black;
+      }
+      .i-ulasan {
+        font-family: Poppins;
+        color: black;
+        background-color: white;
+        width: 55%;
+      height: 120px;
+      border: 2px solid white;
+        border-radius: 10px;
+      }
+      .tombol{
+        font-size: 16px;
+        margin-top: 75px;
+        float: right;
+        color: white;
+        background-color: #0098de; 
+      font-weight: 700;
+      width: 20%; 
+      border: 2px solid #244557;
+      border-radius: 10px;
+      }
+      .tombol:hover {
+        background-color: #6B8E23;
+      }
+      .back{
+        font-size: 16px;
+        margin-top: 75px;
+        float: left;
+        color: white;
+        background-color: #0098de; 
+      font-weight: 700;
+      width: 20%; 
+      border: 2px solid #244557;
+      border-radius: 10px;
+      }
+      .back:hover {
+        background-color: #6B8E23;
+      }
+      @media (min-width: 568px) {
+      html, body {
+      height: 100%;
+      }
+      .main-block {
+      flex-direction: row;
+      height: calc(100% - 50px);
+      }
+      }
+      </style>
+</head>
+<body>
+	<div class="main-block">
+      <form action="ulasan.php" method="POST" class="form">
+            <center>
+            <h2>Tambah Ulasan</h2></center><br>
+            <label>Objek Wisata</label><span>
+            <select name="objek_wisata">
+                  <option class="s-option" value="raja_ampat">Raja Ampat</option>
+                  <option class="s-option" value="danau_sentani" >Danau Sentani</option>
+                  <option class="s-option" value="jayawijaya" >Puncak Jayawijaya</option>
+                  <option class="s-option" value="teluk_cenderawasih" >Teluk Cenderawasih</option>
+                  <option class="s-option" value="kuala_kencana" >Kuala Kencana</option>
+                  <option class="s-option" value="lembah_baliem" >Lembah Baliem</option>
+            </select></span><br>
+            <label for="">Ulasan</label><textarea name="ulasan" class="i-ulasan" placeholder="Tambahkan Ulasan..."></textarea>
+            <input class="back" type="button" value="<< Back" onclick="history.back(-1)" />
+            <input name="submit" class="tombol" type="submit" value="Tambah" />
+      </form>
+      </div>
+</body>
+</html>
